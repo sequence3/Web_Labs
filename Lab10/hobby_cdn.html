@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>React Hobby - CDN</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 550px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #61dafb;
+            margin-bottom: 30px;
+        }
+
+        .hobby-box {
+            border-bottom: 2px solid #eee;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.4em;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class HobbyClass extends React.Component {
+            render() {
+                return (
+                    <div className="hobby-box">
+                        <h2>Караоке та музика 🎤 (Class Component)</h2>
+                        <p>У вільний час я обожнюю вмикати караоке на YouTube і просто співати. Це мій особистий спосіб перезавантажитись — такий процес неймовірно заряджає енергією і дає сили впевнено йти далі по дню.</p>
+                    </div>
+                );
+            }
+        }
+
+        function HobbyFunction() {
+            return (
+                <div>
+                    <h2>Фотографія та зйомка 📸 (Functional Component)</h2>
+                    <p>Моя інша велика пристрасть — це фото та відео. За найменшої нагоди я дістаю камеру чи телефон, щоб зафіксувати момент. Мені подобається ловити цікаві деталі та зберігати спогади в кадрі.</p>
+                </div>
+            );
+        }
+
+        // Головна компонента
+        function App() {
+            return (
+                <div className="container">
+                    <h1>Мої захоплення на React.js</h1>
+                    <HobbyClass />
+                    <HobbyFunction />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
