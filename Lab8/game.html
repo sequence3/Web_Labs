@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Гра</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+        }
+        /* Робимо сітку 5х4 для 20 цифр */
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 80px);
+            gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            background-color: #d3ffd3 !important;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 300px;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .best-score {
+            background-color: #ffd700;
+            font-weight: bold;
+        }
+        /* Підсвітка кращого результату */
+    </style>
+</head>
+<body>
+    <h2>Залишилось: <span id="timer">60</span> с.</h2>
+    <div id="game-board"></div>
+    <button id="restart-btn">Почати з початку</button>
+
+    <h3>Статистика</h3>
+    <table>
+        <thead><tr><th>Гра</th><th>Час</th></tr></thead>
+        <tbody id="stats-body"></tbody>
+    </table>
+
+    <script src="game.js"></script>
+</body>
+</html>
